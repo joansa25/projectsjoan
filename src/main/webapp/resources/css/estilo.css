@@ -1,0 +1,62 @@
+@CHARSET "ISO-8859-1";
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/002/832/903/non_2x/dark-blue-green-background-with-circles-glitter-abstract-illustration-with-colorful-drops-pattern-for-websites-landing-pages-vector.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-attachment: fixed; /* Fija la imagen en su posición al hacer scroll */
+    /* Otras propiedades opcionales para ajustar la apariencia de la imagen de fondo */
+    /* background-position: center center; */
+    /* background-color: #f0f0f0; */
+}
+
+
+
+.texto{
+   /* display: inline-block;
+    padding: 10px 30px;
+    text-decoration: none;*/
+    font-family: Arial, sans-serif;
+       
+font-size: 35px; 
+    color : black;
+}
+/*
+.fuera{
+    background:#0093a9;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}*/
+
+.contenedor{
+    margin: 0 auto;
+    width: 90%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Esto asegura que el contenedor ocupe toda la altura de la pantalla */
+}
+
+
+
+.flex{
+    display: flex
+}
+
+.text-center{
+    text-align: center
+}
+
+.columna{
+    background: greenyellow;
+    color: #333;
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50px; 
+    box-shadow: 5px 5px 10px #888;
+}
+
+

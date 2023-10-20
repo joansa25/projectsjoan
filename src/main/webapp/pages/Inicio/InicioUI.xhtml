@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>TODO supply a title</title>
+		
+		   <link rel="stylesheet" 
+              href="#{facesContext.externalContext.requestContextPath}/resources/css/estilo.css"/>
+	</h:head>
+	<h:body>
+
+		<section class="contenedor flex text-center">
+
+			<p:outputLabel value="#{bkn_Inicio.mensaje}" />
+
+			<div class="columna">
+				<h:form class="formulario">
+					<h2 class="texto" > CLIENTES</h2>
+										<br/>
+					<p:commandButton class="boton" value="Visitar" action="crudCliente.xhtml"/>
+															
+				</h:form>
+										<br/>
+
+			</div>
+
+			<div class="columna">
+				<h:form>
+					<h2 class="texto" > ORDENES</h2>
+										<br/>
+
+					<p:commandButton class="boton" value="Visitar" action="crudOrden.xhtml"/>
+
+				</h:form>
+
+			</div>
+
+			<div class="columna">
+				<h:form>
+
+					<h2 class="texto" > DETALLE COMPRA</h2>
+					<br/>
+					<p:commandButton class="boton" value="Visitar" action="crudDetalle_orden.xhtml"/>
+															
+				</h:form>
+
+			</div>
+
+			<div class="columna">										<h:form>
+
+					<h2 class="texto" > PRODUCTOS</h2>
+										<br/>
+
+					<p:commandButton class="boton" value="Visitar" action="crudProducto.xhtml"/>
+
+				</h:form>
+
+			</div>
+
+		</section>
+
+
+	</h:body>
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>TODO supply a title</title>
+        <h:outputScript name="script.js" library="js"/>
+        <h:outputStylesheet name="default.css" library="css"/> 
+        <h:outputStylesheet name="theme.css" library="css"/>
+    </h:head>
+    <h:body>
+        <style>
+            .contenedorFormulario {
+                width: 99%;
+                height: 30%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .formularioClientes {
+                margin: 10px;
+            }
+            body{
+               background-color: cadetblue;
+            }
+            .formulario{
+                 background-color: #0093a9;
+            }
+            
+        </style>
+        <h1> <p:outputLabel value="#{bkn_Inicio.mensaje}"    class="contenedorFormulario"/></h1>
+        <br></br>
+        <div class="contenedorFormulario">
+            <h:form id="formulario1" class="formulario">
+                <p:panelGrid columns="2">   
+                    
+                    <p:outputLabel value="Nombre"/>
+                    <p:inputText id="txtNombre" value="#{bkn_Inicio.dato2}"/>
+                    <p:outputLabel value="Correo"/>
+                    <p:inputText id="txtCorreo" value="#{bkn_Inicio.dato3}"/>
+                    <p:outputLabel value="Direccion"/>
+                    <p:inputText id="txtDireccion" value="#{bkn_Inicio.dato4}"/>
+                    <p:outputLabel value="Telefono"/>
+                    <p:inputText id="txtTelefono" value="#{bkn_Inicio.dato5}"/>
+                    <p:commandButton id="btnInsertar" value="Agregar" action="#{bkn_Inicio.accionesCliente(1)}" update="tblLista, formulario1" disabled="#{bkn_Inicio.band}"/>
+                    <p:commandButton id="btnActualizar" value="Actualizar" action="#{bkn_Inicio.accionesCliente(2)}" update="tblLista, formulario1"/>
+                    <p:commandButton id="btnEliminar" value="Eliminar" action="#{bkn_Inicio.accionesCliente(3)}" update="tblLista, formulario1"/>   
+                    <p:commandButton id="btnInicio" value="Inicio" action="InicioUI.xhtml"/>
+                </p:panelGrid>
+            </h:form>
+        </div>
+        <br></br>
+        
+        <p:dataTable id="tblLista" value="#{bkn_Inicio.clientes}" var="item" selection="#{bkn_Inicio.datos}" rowKey="#{item.id}" lazy="true" selectionMode="single">
+            <p:ajax event="rowSelect" listener="#{bkn_Inicio.onRowSelect}" update="formulario1"/>
+            <p:ajax event="rowUnselect" listener="#{bkn_Inicio.onRowUnselect}" update="formulario1"/>
+            <p:column>
+                <f:facet name="header">
+                    ID
+                </f:facet>
+                <p:outputLabel value="#{item.id}"/> 
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    Nombre
+                </f:facet>
+                <p:outputLabel value="#{item.nombre}"/> 
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    Direccion
+                </f:facet>
+                <p:outputLabel value="#{item.direccion}"/> 
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    Correo
+                </f:facet>
+                <p:outputLabel value="#{item.correo}"/> 
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    Telefono
+                </f:facet>
+                <p:outputLabel value="#{item.telefono}"/> 
+            </p:column>
+        </p:dataTable>
+    </h:body>
+</html>
